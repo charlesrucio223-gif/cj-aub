@@ -1,0 +1,404 @@
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #7a1c1c; 
+    color: #333;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* Upang mapanatili ang tamang kulay at hover effect ng clickable cards */
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+    max-width: 380px;
+}
+
+.center-side .card-link {
+    max-width: 600px;
+}
+
+.card-link:hover {
+    opacity: 1; /* Tinanggal ang opacity fade sa buong card para hindi lumabo ang text */
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 95vh; 
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), 
+                url('IMG_0071.JPG') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #ffffff;
+    padding: 20px 40px;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.nav-logo-center {
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0 20px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.get-quote {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding-right: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 13px;
+}
+
+/* --- Hero Main Content --- */
+.hero-content {
+    max-width: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 40px;
+    position: relative;
+}
+
+.watermark-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 110px;
+    color: rgba(255, 255, 255, 0.08);
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* --- Our Story Section --- */
+.our-story {
+    text-align: center;
+    padding: 90px 20px 40px 20px;
+    background-color: #7a1c1c; 
+    position: relative;
+}
+
+.story-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #d4af37; 
+    margin-bottom: 8px;
+}
+
+.story-title {
+    font-family: 'Cinzel', serif;
+    font-size: 28px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffffff; 
+    margin-bottom: 25px;
+}
+
+.story-p {
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #eeeeee; 
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* --- TIMELINE DESIGN WITH ADVANCED STYLING --- */
+.timeline-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px 100px 20px;
+    background-color: #7a1c1c;
+}
+
+/* Gitnang linya ng timeline */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.6), rgba(212, 175, 55, 0.1));
+    top: 0;
+    bottom: 250px; 
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Bawat milestone row */
+.timeline-row {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 90px; 
+}
+
+/* Heart Indicator sa gitna ng linya */
+.timeline-heart-node {
+    position: absolute;
+    right: -11px;
+    top: 38px;
+    color: #d4af37;
+    font-size: 20px;
+    z-index: 2;
+    background-color: #7a1c1c;
+    padding: 2px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.right-side .timeline-heart-node {
+    left: -11px;
+    right: auto;
+}
+
+/* Kaliwa, Kanan, at Gitna na Pwesto */
+.left-side {
+    left: 0;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.right-side {
+    left: 50%;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Center Section Configuration */
+.center-side {
+    width: 100%;
+    left: 0;
+    align-items: center;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.center-side .timeline-heart-node {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: -40px;
+}
+
+/* Puso sa pinakagilid */
+.floating-bg-hearts {
+    position: absolute;
+    color: rgb(255, 255, 255); 
+    font-size: 45px;
+    pointer-events: none;
+    z-index: 0;
+}
+.left-side .floating-bg-hearts { left: -120px; top: 40px; }
+.right-side .floating-bg-hearts { right: -120px; top: 40px; }
+.center-side .floating-bg-hearts { display: none; } 
+
+/* Card Frame Wrapper */
+.timeline-card {
+    width: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.02); 
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-8px); 
+    border-color: rgba(212, 175, 55, 0.3); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    cursor: pointer; /* Binabago ang cursor para maging kamay kapag tinapat */
+}
+
+/* Photo Frame Box (Default Patayo/Portrait) */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    height: 480px; 
+    width: 100%;
+    position: relative;
+    background-color: #5c1414;
+    margin-bottom: 20px;
+    z-index: 1;
+    padding: 8px; 
+    border: 1px solid rgba(212, 175, 55, 0.4); 
+}
+
+/* DITO GINAWANG PAHIGA ANG RESIZE NG BOX NG LARAWAN */
+.center-side .gallery-item {
+    height: 380px; 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 4px;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); 
+}
+
+/* Typography inside timeline */
+.timeline-tag {
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    color: #d4af37; 
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.left-side .timeline-tag { justify-content: flex-end; }
+.center-side .timeline-tag { justify-content: center; }
+
+.timeline-date {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.timeline-desc {
+    font-size: 13px;
+    color: #eeeeee;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* --- Responsive Design para sa Mobile Phones --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 20px;
+    }
+    .nav-logo-center {
+        order: -1;
+    }
+    .hero-content {
+        padding-left: 10px;
+        text-align: center;
+    }
+    .watermark-text {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 80px;
+    }
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .timeline-container::after {
+        left: 31px;
+        bottom: 100px;
+    }
+    .timeline-row {
+        width: 100%;
+        padding-left: 55px;
+        padding-right: 20px;
+        align-items: flex-start !important;
+        text-align: left !important;
+        margin-bottom: 60px;
+    }
+    .right-side {
+        left: 0%;
+    }
+    .center-side .timeline-heart-node {
+        left: 21px !important;
+        transform: none;
+        top: 38px;
+    }
+    .left-side .timeline-tag, .center-side .timeline-tag { 
+        justify-content: flex-start; 
+    }
+    .gallery-item {
+        height: 410px;
+    }
+    .center-side .gallery-item {
+        height: 280px; 
+    }
+    .floating-bg-hearts {
+        display: none; 
+    }
+}

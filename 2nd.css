@@ -1,0 +1,241 @@
+/* ==========================================================================
+   CHAPTER TWO BASE LAYER & SHARED STYLES
+   ========================================================================== */
+
+/* Gitnang lalagyan ng buong pahina */
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Glassmorphism Cards para sa Text at Larawan */
+.letter-card, .memory-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 550px;
+    transition: transform 0.3s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.date-badge {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-badge i {
+    color: #d4af37;
+    font-size: 10px;
+}
+
+.divider {
+    width: 50px;
+    height: 1px;
+    background: #d4af37;
+    margin-bottom: 25px;
+}
+
+.love-letter {
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+    color: #eeeeee;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+.memory-title {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    color: #d4af37;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.memory-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #dddddd;
+    font-weight: 300;
+}
+
+.nav-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.back-button {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #d4af37;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    border-color: #d4af37;
+    letter-spacing: 3px;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   CHAPTER TWO SPECIFIC LAYOUT (Right-Side Image & Left-Side Content)
+   ========================================================================== */
+
+/* --- Kanang Bahagi: Larawan para sa Chapter 2 (Naka-Fixed sa Kanan) --- */
+.ch2-wrapper .image-side {
+    flex: 1;
+    position: fixed;
+    right: 0; 
+    left: auto;
+    top: 0;
+    width: 50%;
+    height: 100vh;
+    background: linear-gradient(to left, rgba(122, 28, 28, 0) 70%, #7a1c1c 100%),
+                url('IMG_2536.JPG') no-repeat center center/cover;
+    z-index: 1;
+}
+
+/* --- Kaliwang Bahagi: Mensahe at Gallery (Scrollable sa Kaliwa) --- */
+.ch2-wrapper .content-side {
+    flex: 1;
+    margin-right: 50%; 
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 40px;
+    background-color: #7a1c1c;
+    position: relative;
+    z-index: 2;
+    gap: 40px; 
+}
+
+/* Ambient background floating heart sa kaliwa */
+.ch2-wrapper .bg-heart {
+    position: absolute;
+    left: 10%; 
+    top: 5%;
+    font-size: 180px;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- Premium Transparent Image Frame --- */
+.ch2-wrapper .gallery-img-wrapper {
+    width: 100%;
+    height: 480px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 3px double #d4af37;
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: transparent !important;
+}
+
+.ch2-wrapper .gallery-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 2px;
+    background: transparent !important;
+}
+
+/* --- Premium Transparent Video Frame --- */
+.ch2-wrapper .gallery-vid-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 3px double #d4af37;
+    padding: 8px;
+    margin-bottom: 20px;
+    background-color: transparent !important;
+}
+
+.ch2-wrapper .gallery-vid-wrapper video {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+    background-color: #000000;
+    display: block;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* --- Responsive Setup para sa Mobile (Chapter 2) --- */
+@media (max-width: 968px) {
+    .ch2-wrapper {
+        flex-direction: column;
+    }
+
+    .ch2-wrapper .image-side {
+        position: relative;
+        width: 100%;
+        min-height: 50vh;
+        background: linear-gradient(to bottom, rgba(122, 28, 28, 0) 70%, #7a1c1c 100%),
+                    url('IMG_2536.JPG') no-repeat center center/cover;
+    }
+
+    .ch2-wrapper .content-side {
+        margin-right: 0;
+        padding: 40px 20px 60px 20px;
+    }
+
+    .ch2-wrapper .letter-card, .ch2-wrapper .memory-card {
+        padding: 30px 20px;
+    }
+
+    .ch2-wrapper .main-title {
+        font-size: 30px;
+    }
+
+    .ch2-wrapper .gallery-img-wrapper, 
+    .ch2-wrapper .gallery-vid-wrapper {
+        height: 350px;
+    }
+}

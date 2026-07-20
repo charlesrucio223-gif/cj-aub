@@ -1,0 +1,213 @@
+/* ==========================================================================
+   CHAPTER 3 STYLES (Centered Premium Layout)
+   ========================================================================== */
+
+/* --- Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('IMG_0652.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* --- Centered Layout Container --- */
+.page-wrapper {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* --- GITNANG BAHAGI: Mas Malapad at Centered Content --- */
+.content-side {
+    width: 100%;
+    max-width: 700px; 
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    position: relative;
+    z-index: 2;
+    gap: 50px; 
+}
+
+/* Ambient background floating heart behind text */
+.bg-heart {
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 280px; 
+    color: rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- Letter Glass Card & Gallery Cards --- */
+.letter-card, .memory-card {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 45px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.letter-card:hover, .memory-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.45);
+}
+
+.subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
+    color: #d4af37;
+    margin-bottom: 5px;
+    text-align: center; 
+}
+
+.main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 42px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.date-badge {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.date-badge i {
+    color: #d4af37;
+    font-size: 11px;
+}
+
+.divider {
+    width: 80px;
+    height: 1px;
+    background: #d4af37;
+    margin: 0 auto 30px auto; 
+}
+
+.love-letter {
+    font-size: 16px;
+    line-height: 2.0;
+    font-weight: 300;
+    color: #eeeeee;
+    margin-bottom: 35px;
+    text-align: justify;
+}
+
+/* --- Premium Transparent Image Wrapper --- */
+.gallery-img-wrapper {
+    width: 100%;
+    height: 520px; 
+    border-radius: 6px;
+    overflow: hidden;
+    border: 3px double #d4af37;
+    padding: 8px;
+    margin-bottom: 25px;
+    background-color: transparent !important;
+}
+
+.gallery-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 2px;
+    background: transparent !important;
+}
+
+/* Nilinis na rin ang layout ng video wrapper class para sa secondary configurations */
+.gallery-vid-wrapper {
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.memory-title {
+    font-family: 'Cinzel', serif;
+    font-size: 22px;
+    color: #d4af37;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.memory-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #dddddd;
+    font-weight: 300;
+}
+
+/* --- Navigation Buttons --- */
+.nav-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.back-button {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #d4af37;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    border-color: #d4af37;
+    letter-spacing: 3px;
+    opacity: 0.9;
+}
+
+/* --- Responsive Design (Mobile Setup) --- */
+@media (max-width: 768px) {
+    .content-side {
+        padding: 50px 16px;
+        gap: 35px;
+    }
+
+    .letter-card, .memory-card {
+        padding: 30px 20px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .gallery-img-wrapper {
+        height: 380px;
+    }
+}
